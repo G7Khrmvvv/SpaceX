@@ -13,6 +13,7 @@
 		886C0C562BA572F0000EDAC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886C0C542BA572F0000EDAC1 /* Main.storyboard */; };
 		886C0C582BA572F1000EDAC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 886C0C572BA572F1000EDAC1 /* Assets.xcassets */; };
 		886C0C5B2BA572F1000EDAC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886C0C592BA572F1000EDAC1 /* LaunchScreen.storyboard */; };
+		886C0C672BA573AB000EDAC1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 886C0C662BA573AB000EDAC1 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				886C0C672BA573AB000EDAC1 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +58,39 @@
 		886C0C4D2BA572F0000EDAC1 /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
+				886C0C642BA5730D000EDAC1 /* Res */,
+				886C0C632BA57304000EDAC1 /* Main */,
+				886C0C622BA572FD000EDAC1 /* App */,
+			);
+			path = SpaceX;
+			sourceTree = "<group>";
+		};
+		886C0C622BA572FD000EDAC1 /* App */ = {
+			isa = PBXGroup;
+			children = (
 				886C0C4E2BA572F0000EDAC1 /* AppDelegate.swift */,
 				886C0C502BA572F0000EDAC1 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		886C0C632BA57304000EDAC1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
 				886C0C522BA572F0000EDAC1 /* ViewController.swift */,
 				886C0C542BA572F0000EDAC1 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		886C0C642BA5730D000EDAC1 /* Res */ = {
+			isa = PBXGroup;
+			children = (
 				886C0C572BA572F1000EDAC1 /* Assets.xcassets */,
 				886C0C592BA572F1000EDAC1 /* LaunchScreen.storyboard */,
 				886C0C5C2BA572F1000EDAC1 /* Info.plist */,
 			);
-			path = SpaceX;
+			path = Res;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +109,9 @@
 			dependencies = (
 			);
 			name = SpaceX;
+			packageProductDependencies = (
+				886C0C662BA573AB000EDAC1 /* SnapKit */,
+			);
 			productName = SpaceX;
 			productReference = 886C0C4B2BA572F0000EDAC1 /* SpaceX.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +140,9 @@
 				Base,
 			);
 			mainGroup = 886C0C422BA572F0000EDAC1;
+			packageReferences = (
+				886C0C652BA573AB000EDAC1 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 886C0C4C2BA572F0000EDAC1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -291,7 +323,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QB9SZGTXYL;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SpaceX/Info.plist;
+				INFOPLIST_FILE = SpaceX/Res/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -319,7 +351,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QB9SZGTXYL;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SpaceX/Info.plist;
+				INFOPLIST_FILE = SpaceX/Res/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -360,6 +392,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		886C0C652BA573AB000EDAC1 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		886C0C662BA573AB000EDAC1 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 886C0C652BA573AB000EDAC1 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 886C0C432BA572F0000EDAC1 /* Project object */;
 }
