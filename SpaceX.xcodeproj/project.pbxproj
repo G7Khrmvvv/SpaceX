@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8830441E2BAEE79700713594 /* PropertyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8830441D2BAEE79700713594 /* PropertyViewController.swift */; };
+		883044202BAEE91600713594 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8830441F2BAEE91600713594 /* LaunchViewController.swift */; };
 		886C0C4F2BA572F0000EDAC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886C0C4E2BA572F0000EDAC1 /* AppDelegate.swift */; };
 		886C0C512BA572F0000EDAC1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886C0C502BA572F0000EDAC1 /* SceneDelegate.swift */; };
-		886C0C532BA572F0000EDAC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886C0C522BA572F0000EDAC1 /* ViewController.swift */; };
-		886C0C562BA572F0000EDAC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886C0C542BA572F0000EDAC1 /* Main.storyboard */; };
 		886C0C582BA572F1000EDAC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 886C0C572BA572F1000EDAC1 /* Assets.xcassets */; };
 		886C0C5B2BA572F1000EDAC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886C0C592BA572F1000EDAC1 /* LaunchScreen.storyboard */; };
 		886C0C672BA573AB000EDAC1 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 886C0C662BA573AB000EDAC1 /* SnapKit */; };
@@ -23,15 +23,16 @@
 		886C0C782BA584FD000EDAC1 /* SF-Pro-Rounded-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 886C0C6F2BA584FD000EDAC1 /* SF-Pro-Rounded-Thin.otf */; };
 		886C0C792BA584FD000EDAC1 /* SF-Pro-Rounded-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 886C0C702BA584FD000EDAC1 /* SF-Pro-Rounded-Ultralight.otf */; };
 		886C0C7A2BA584FD000EDAC1 /* SF-Pro-Rounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 886C0C712BA584FD000EDAC1 /* SF-Pro-Rounded-Medium.otf */; };
+		886DD2232BAF1FFE0026C5B0 /* RocketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886DD2222BAF1FFE0026C5B0 /* RocketViewController.swift */; };
 		88AC1FF22BA58A5E0071235F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 88AC1FF12BA58A5E0071235F /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8830441D2BAEE79700713594 /* PropertyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyViewController.swift; sourceTree = "<group>"; };
+		8830441F2BAEE91600713594 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		886C0C4B2BA572F0000EDAC1 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		886C0C4E2BA572F0000EDAC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		886C0C502BA572F0000EDAC1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		886C0C522BA572F0000EDAC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		886C0C552BA572F0000EDAC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		886C0C572BA572F1000EDAC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		886C0C5A2BA572F1000EDAC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		886C0C5C2BA572F1000EDAC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 		886C0C6F2BA584FD000EDAC1 /* SF-Pro-Rounded-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Thin.otf"; sourceTree = "<group>"; };
 		886C0C702BA584FD000EDAC1 /* SF-Pro-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
 		886C0C712BA584FD000EDAC1 /* SF-Pro-Rounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Medium.otf"; sourceTree = "<group>"; };
+		886DD2222BAF1FFE0026C5B0 /* RocketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +99,9 @@
 		886C0C632BA57304000EDAC1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				886C0C522BA572F0000EDAC1 /* ViewController.swift */,
-				886C0C542BA572F0000EDAC1 /* Main.storyboard */,
+				8830441D2BAEE79700713594 /* PropertyViewController.swift */,
+				8830441F2BAEE91600713594 /* LaunchViewController.swift */,
+				886DD2222BAF1FFE0026C5B0 /* RocketViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -207,7 +210,6 @@
 				886C0C762BA584FD000EDAC1 /* SF-Pro-Rounded-Regular.otf in Resources */,
 				886C0C772BA584FD000EDAC1 /* SF-Pro-Rounded-Bold.otf in Resources */,
 				886C0C722BA584FD000EDAC1 /* SF-Pro-Rounded-Heavy.otf in Resources */,
-				886C0C562BA572F0000EDAC1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,7 +220,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				886C0C532BA572F0000EDAC1 /* ViewController.swift in Sources */,
+				883044202BAEE91600713594 /* LaunchViewController.swift in Sources */,
+				886DD2232BAF1FFE0026C5B0 /* RocketViewController.swift in Sources */,
+				8830441E2BAEE79700713594 /* PropertyViewController.swift in Sources */,
 				886C0C4F2BA572F0000EDAC1 /* AppDelegate.swift in Sources */,
 				886C0C512BA572F0000EDAC1 /* SceneDelegate.swift in Sources */,
 			);
@@ -227,14 +231,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		886C0C542BA572F0000EDAC1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				886C0C552BA572F0000EDAC1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		886C0C592BA572F1000EDAC1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -374,7 +370,6 @@
 				INFOPLIST_FILE = SpaceX/Res/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -403,7 +398,6 @@
 				INFOPLIST_FILE = SpaceX/Res/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
