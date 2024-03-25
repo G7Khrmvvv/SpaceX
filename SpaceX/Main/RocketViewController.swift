@@ -123,6 +123,21 @@ final class ViewController1: UIViewController {
     private let mainInfoScroll = UIScrollView()
 
     private let secondInfoScroll = UIScrollView()
+
+    
+    private let subview1 = UIView()
+    private let subview2 = UIView()
+    private let subview3 = UIView()
+    private let subview4 = UIView()
+    private let subview5 = UIView()
+    
+    private let firstlaunch = UILabel()
+    private let country = UILabel()
+    
+    private let firstStage = UILabel()
+    
+    private let engineCount = UILabel()
+    private let fuelamount = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -142,7 +157,17 @@ private extension ViewController1 {
             header,
             propertyButton,
             mainInfoScroll,
-            secondInfoScroll
+            secondInfoScroll,
+            subview1,
+            subview2,
+            subview3,
+            subview4,
+            subview5,
+            firstlaunch,
+            country,
+            firstStage,
+            engineCount,
+            fuelamount
         
         ].forEach{view.addSubview($0)}
     }
@@ -151,6 +176,11 @@ private extension ViewController1 {
 private extension ViewController1 {
     func setupLayout() {
         view.addSubview(secondView)
+        view.addSubview(subview1)
+        view.addSubview(subview2)
+        view.addSubview(subview3)
+        view.addSubview(subview4)
+        view.addSubview(subview5)
         
         secondView.snp.makeConstraints{
             $0.top.equalTo(view.snp.topMargin).offset(300)
@@ -187,16 +217,61 @@ private extension ViewController1 {
         }
         
         secondInfoScroll.snp.makeConstraints{
-            $0.top.equalTo(mainInfoScroll.snp.topMargin).offset(10)
+            $0.top.equalTo(mainInfoScroll.snp.topMargin).offset(1)
             $0.leading.equalToSuperview()
             $0.trailing.equalToSuperview()
             $0.height.equalTo(120)
+        }
+        
+        subview1.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(secondInfoScroll.snp.leadingMargin).offset(20)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
+        }
+        
+        subview2.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(subview1.snp.trailingMargin).offset(35)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
+        }
+        
+        subview3.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(subview2.snp.trailingMargin).offset(35)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
+        }
+        
+        subview4.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(subview3.snp.trailingMargin).offset(35)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
+        }
+        
+        subview5.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(subview4.snp.trailingMargin).offset(35)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
         }
         
         secondView.addSubview(header)
         secondView.addSubview(propertyButton)
         secondView.addSubview(mainInfoScroll)
         secondView.addSubview(secondInfoScroll)
+        secondView.addSubview(subview1)
+        secondView.addSubview(subview2)
+        secondView.addSubview(subview3)
+        secondView.addSubview(subview4)
+        secondView.addSubview(subview5)
+        secondView.addSubview(firstlaunch)
+        secondView.addSubview(country)
+        secondView.addSubview(firstStage)
+        secondView.addSubview(engineCount)
+        secondView.addSubview(fuelamount)
     }
 }
 
@@ -212,9 +287,20 @@ private extension ViewController1 {
         header.textColor = .white
         header.font = UIFont(name: "SFProRounded-Medium", size: 32)
         
-        mainInfoScroll.backgroundColor = .white
+        mainInfoScroll.backgroundColor = .black
         
-        secondInfoScroll.backgroundColor = .green
+        secondInfoScroll.backgroundColor = .black
+        
+        subview1.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview1.layer.cornerRadius = 20
+        subview2.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview2.layer.cornerRadius = 20
+        subview3.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview3.layer.cornerRadius = 20
+        subview4.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview4.layer.cornerRadius = 20
+        subview5.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview5.layer.cornerRadius = 20
     }
 }
 
