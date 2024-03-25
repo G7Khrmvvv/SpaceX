@@ -118,8 +118,11 @@ final class ViewController1: UIViewController {
     private let secondView = UIView()
     
     private let header = UILabel()
+    private let propertyButton = UIButton()
     
-    
+    private let mainInfoScroll = UIScrollView()
+
+    private let secondInfoScroll = UIScrollView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -136,7 +139,10 @@ private extension ViewController1 {
         [
             image1,
             secondView,
-            header
+            header,
+            propertyButton,
+            mainInfoScroll,
+            secondInfoScroll
         
         ].forEach{view.addSubview($0)}
     }
@@ -163,8 +169,34 @@ private extension ViewController1 {
         header.snp.makeConstraints{
             $0.top.equalTo(secondView.snp.topMargin).offset(30)
             $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
+            $0.width.equalTo(150)
         }
+        
+        propertyButton.snp.makeConstraints{
+            $0.top.equalTo(secondView.snp.topMargin).offset(30)
+            $0.leading.equalTo(header.snp.trailingMargin).offset(160)
+            $0.height.equalTo(50)
+            $0.width.equalTo(50)
+        }
+        
+        mainInfoScroll.snp.makeConstraints{
+            $0.top.equalTo(header.snp.bottomMargin).offset(30)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalTo(secondView.snp.bottomMargin).inset(10)
+        }
+        
+        secondInfoScroll.snp.makeConstraints{
+            $0.top.equalTo(mainInfoScroll.snp.topMargin).offset(10)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.height.equalTo(120)
+        }
+        
         secondView.addSubview(header)
+        secondView.addSubview(propertyButton)
+        secondView.addSubview(mainInfoScroll)
+        secondView.addSubview(secondInfoScroll)
     }
 }
 
@@ -178,14 +210,21 @@ private extension ViewController1 {
         
         
         header.textColor = .white
-        header.font = UIFont(name: "SFProRounded-Semibold", size: 36)
+        header.font = UIFont(name: "SFProRounded-Medium", size: 32)
+        
+        mainInfoScroll.backgroundColor = .white
+        
+        secondInfoScroll.backgroundColor = .green
     }
 }
 
 private extension ViewController1 {
     func setupData() {
         image1.image = UIImage(named: "starship")
+        
         header.text = "Starship"
+        
+        propertyButton.setImage(UIImage(named: "setting-1"), for: .normal)
     }
 }
 
@@ -362,3 +401,6 @@ private extension ViewController3 {
 
     }
 }
+
+
+
