@@ -28,7 +28,6 @@ final class PropertyViewController: UIViewController {
         setupAppearance()
         setupData()
         setupBehavior()
-        self.title = "Property"
     }
 }
 
@@ -53,9 +52,7 @@ private extension PropertyViewController {
 
 private extension PropertyViewController {
     func setupAppearance() {
-        
-        view.backgroundColor = .green
-        
+
 
     }
 }

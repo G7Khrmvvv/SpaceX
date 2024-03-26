@@ -34,10 +34,12 @@ extension RocketViewController {
         let page1 = ViewController1()
         let page2 = ViewController2()
         let page3 = ViewController3()
+        let page4 = ViewController4()
 
         pages.append(page1)
         pages.append(page2)
         pages.append(page3)
+        pages.append(page4)
         
         setViewControllers([pages[initialPage]], direction: .forward, animated: false, completion: nil)
     }
@@ -132,7 +134,13 @@ final class ViewController1: UIViewController {
     private let subview5 = UIView()
     
     private let firstlaunch = UILabel()
+    private let firstLaunchData = UILabel()
+    
     private let country = UILabel()
+    private let countryData = UILabel()
+    
+    private let moneyLaunch = UILabel()
+    private let moneyLaunchData = UILabel()
     
     private let firstStage = UILabel()
     
@@ -167,7 +175,12 @@ private extension ViewController1 {
             country,
             firstStage,
             engineCount,
-            fuelamount
+            fuelamount,
+            moneyLaunch,
+            countryData,
+            moneyLaunchData,
+            firstLaunchData
+            
         
         ].forEach{view.addSubview($0)}
     }
@@ -199,12 +212,11 @@ private extension ViewController1 {
         header.snp.makeConstraints{
             $0.top.equalTo(secondView.snp.topMargin).offset(30)
             $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
-            $0.width.equalTo(150)
         }
         
         propertyButton.snp.makeConstraints{
-            $0.top.equalTo(secondView.snp.topMargin).offset(30)
-            $0.leading.equalTo(header.snp.trailingMargin).offset(160)
+            $0.top.equalTo(secondView.snp.topMargin).offset(25)
+            $0.leading.equalTo(header.snp.trailingMargin).offset(200)
             $0.height.equalTo(50)
             $0.width.equalTo(50)
         }
@@ -217,7 +229,7 @@ private extension ViewController1 {
         }
         
         secondInfoScroll.snp.makeConstraints{
-            $0.top.equalTo(mainInfoScroll.snp.topMargin).offset(1)
+            $0.top.equalTo(mainInfoScroll.snp.topMargin).offset(0)
             $0.leading.equalToSuperview()
             $0.trailing.equalToSuperview()
             $0.height.equalTo(120)
@@ -225,7 +237,7 @@ private extension ViewController1 {
         
         subview1.snp.makeConstraints{
             $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
-            $0.leading.equalTo(secondInfoScroll.snp.leadingMargin).offset(20)
+            $0.leading.equalTo(secondInfoScroll.snp.leadingMargin).offset(25)
             $0.height.equalTo(100)
             $0.width.equalTo(100)
         }
@@ -258,6 +270,26 @@ private extension ViewController1 {
             $0.width.equalTo(100)
         }
         
+        firstlaunch.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.bottomMargin).offset(50)
+            $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
+        }
+        
+        country.snp.makeConstraints{
+            $0.top.equalTo(firstlaunch.snp.bottomMargin).offset(40)
+            $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
+        }
+        
+        moneyLaunch.snp.makeConstraints{
+            $0.top.equalTo(country.snp.bottomMargin).offset(40)
+            $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
+        }
+        
+        firstStage.snp.makeConstraints{
+            $0.top.equalTo(moneyLaunch.snp.bottomMargin).offset(55)
+            $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
+        }
+        
         secondView.addSubview(header)
         secondView.addSubview(propertyButton)
         secondView.addSubview(mainInfoScroll)
@@ -272,6 +304,10 @@ private extension ViewController1 {
         secondView.addSubview(firstStage)
         secondView.addSubview(engineCount)
         secondView.addSubview(fuelamount)
+        secondView.addSubview(moneyLaunch)
+        secondView.addSubview(countryData)
+        secondView.addSubview(moneyLaunchData)
+        secondView.addSubview(firstLaunchData)
     }
 }
 
@@ -301,6 +337,18 @@ private extension ViewController1 {
         subview4.layer.cornerRadius = 20
         subview5.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
         subview5.layer.cornerRadius = 20
+        
+        firstlaunch.textColor = .white
+        firstlaunch.font = UIFont(name: "SFProRounded-Light", size: 18)
+
+        country.textColor = .white
+        country.font = UIFont(name: "SFProRounded-Light", size: 18)
+
+        moneyLaunch.textColor = .white
+        moneyLaunch.font = UIFont(name: "SFProRounded-Light", size: 18)
+        
+        firstStage.textColor = .white
+        firstStage.font = UIFont(name: "SFProRounded-Bold", size: 22)
     }
 }
 
@@ -311,6 +359,12 @@ private extension ViewController1 {
         header.text = "Starship"
         
         propertyButton.setImage(UIImage(named: "setting-1"), for: .normal)
+        
+        firstlaunch.text = "Первый запуск"
+        country.text = "Страна"
+        moneyLaunch.text = "Стоимость запуска"
+        
+        firstStage.text = "Первая ступень"
     }
 }
 
@@ -327,8 +381,32 @@ final class ViewController2: UIViewController {
     private let secondView = UIView()
     
     private let header = UILabel()
+    private let propertyButton = UIButton()
     
+    private let mainInfoScroll = UIScrollView()
+
+    private let secondInfoScroll = UIScrollView()
+
     
+    private let subview1 = UIView()
+    private let subview2 = UIView()
+    private let subview3 = UIView()
+    private let subview4 = UIView()
+    private let subview5 = UIView()
+    
+    private let firstlaunch = UILabel()
+    private let firstLaunchData = UILabel()
+    
+    private let country = UILabel()
+    private let countryData = UILabel()
+    
+    private let moneyLaunch = UILabel()
+    private let moneyLaunchData = UILabel()
+    
+    private let firstStage = UILabel()
+    
+    private let engineCount = UILabel()
+    private let fuelamount = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -345,7 +423,25 @@ private extension ViewController2 {
         [
             image1,
             secondView,
-            header
+            header,
+            propertyButton,
+            mainInfoScroll,
+            secondInfoScroll,
+            subview1,
+            subview2,
+            subview3,
+            subview4,
+            subview5,
+            firstlaunch,
+            country,
+            firstStage,
+            engineCount,
+            fuelamount,
+            moneyLaunch,
+            countryData,
+            moneyLaunchData,
+            firstLaunchData
+            
         
         ].forEach{view.addSubview($0)}
     }
@@ -354,6 +450,11 @@ private extension ViewController2 {
 private extension ViewController2 {
     func setupLayout() {
         view.addSubview(secondView)
+        view.addSubview(subview1)
+        view.addSubview(subview2)
+        view.addSubview(subview3)
+        view.addSubview(subview4)
+        view.addSubview(subview5)
         
         secondView.snp.makeConstraints{
             $0.top.equalTo(view.snp.topMargin).offset(300)
@@ -373,7 +474,101 @@ private extension ViewController2 {
             $0.top.equalTo(secondView.snp.topMargin).offset(30)
             $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
         }
+        
+        propertyButton.snp.makeConstraints{
+            $0.top.equalTo(secondView.snp.topMargin).offset(25)
+            $0.leading.equalTo(header.snp.trailingMargin).offset(200)
+            $0.height.equalTo(50)
+            $0.width.equalTo(50)
+        }
+        
+        mainInfoScroll.snp.makeConstraints{
+            $0.top.equalTo(header.snp.bottomMargin).offset(30)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalTo(secondView.snp.bottomMargin).inset(10)
+        }
+        
+        secondInfoScroll.snp.makeConstraints{
+            $0.top.equalTo(mainInfoScroll.snp.topMargin).offset(0)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.height.equalTo(120)
+        }
+        
+        subview1.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(secondInfoScroll.snp.leadingMargin).offset(25)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
+        }
+        
+        subview2.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(subview1.snp.trailingMargin).offset(35)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
+        }
+        
+        subview3.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(subview2.snp.trailingMargin).offset(35)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
+        }
+        
+        subview4.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(subview3.snp.trailingMargin).offset(35)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
+        }
+        
+        subview5.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(subview4.snp.trailingMargin).offset(35)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
+        }
+        
+        firstlaunch.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.bottomMargin).offset(50)
+            $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
+        }
+        
+        country.snp.makeConstraints{
+            $0.top.equalTo(firstlaunch.snp.bottomMargin).offset(40)
+            $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
+        }
+        
+        moneyLaunch.snp.makeConstraints{
+            $0.top.equalTo(country.snp.bottomMargin).offset(40)
+            $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
+        }
+        
+        firstStage.snp.makeConstraints{
+            $0.top.equalTo(moneyLaunch.snp.bottomMargin).offset(55)
+            $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
+        }
+        
         secondView.addSubview(header)
+        secondView.addSubview(propertyButton)
+        secondView.addSubview(mainInfoScroll)
+        secondView.addSubview(secondInfoScroll)
+        secondView.addSubview(subview1)
+        secondView.addSubview(subview2)
+        secondView.addSubview(subview3)
+        secondView.addSubview(subview4)
+        secondView.addSubview(subview5)
+        secondView.addSubview(firstlaunch)
+        secondView.addSubview(country)
+        secondView.addSubview(firstStage)
+        secondView.addSubview(engineCount)
+        secondView.addSubview(fuelamount)
+        secondView.addSubview(moneyLaunch)
+        secondView.addSubview(countryData)
+        secondView.addSubview(moneyLaunchData)
+        secondView.addSubview(firstLaunchData)
     }
 }
 
@@ -387,14 +582,50 @@ private extension ViewController2 {
         
         
         header.textColor = .white
-        header.font = UIFont(name: "SFProRounded-Semibold", size: 36)
+        header.font = UIFont(name: "SFProRounded-Medium", size: 32)
+        
+        mainInfoScroll.backgroundColor = .black
+        
+        secondInfoScroll.backgroundColor = .black
+        
+        subview1.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview1.layer.cornerRadius = 20
+        subview2.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview2.layer.cornerRadius = 20
+        subview3.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview3.layer.cornerRadius = 20
+        subview4.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview4.layer.cornerRadius = 20
+        subview5.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview5.layer.cornerRadius = 20
+        
+        firstlaunch.textColor = .white
+        firstlaunch.font = UIFont(name: "SFProRounded-Light", size: 18)
+
+        country.textColor = .white
+        country.font = UIFont(name: "SFProRounded-Light", size: 18)
+
+        moneyLaunch.textColor = .white
+        moneyLaunch.font = UIFont(name: "SFProRounded-Light", size: 18)
+        
+        firstStage.textColor = .white
+        firstStage.font = UIFont(name: "SFProRounded-Bold", size: 22)
     }
 }
 
 private extension ViewController2 {
     func setupData() {
         image1.image = UIImage(named: "starship")
+        
         header.text = "Starship"
+        
+        propertyButton.setImage(UIImage(named: "setting-1"), for: .normal)
+        
+        firstlaunch.text = "Первый запуск"
+        country.text = "Страна"
+        moneyLaunch.text = "Стоимость запуска"
+        
+        firstStage.text = "Первая ступень"
     }
 }
 
@@ -411,8 +642,32 @@ final class ViewController3: UIViewController {
     private let secondView = UIView()
     
     private let header = UILabel()
+    private let propertyButton = UIButton()
     
+    private let mainInfoScroll = UIScrollView()
+
+    private let secondInfoScroll = UIScrollView()
+
     
+    private let subview1 = UIView()
+    private let subview2 = UIView()
+    private let subview3 = UIView()
+    private let subview4 = UIView()
+    private let subview5 = UIView()
+    
+    private let firstlaunch = UILabel()
+    private let firstLaunchData = UILabel()
+    
+    private let country = UILabel()
+    private let countryData = UILabel()
+    
+    private let moneyLaunch = UILabel()
+    private let moneyLaunchData = UILabel()
+    
+    private let firstStage = UILabel()
+    
+    private let engineCount = UILabel()
+    private let fuelamount = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -429,7 +684,25 @@ private extension ViewController3 {
         [
             image1,
             secondView,
-            header
+            header,
+            propertyButton,
+            mainInfoScroll,
+            secondInfoScroll,
+            subview1,
+            subview2,
+            subview3,
+            subview4,
+            subview5,
+            firstlaunch,
+            country,
+            firstStage,
+            engineCount,
+            fuelamount,
+            moneyLaunch,
+            countryData,
+            moneyLaunchData,
+            firstLaunchData
+            
         
         ].forEach{view.addSubview($0)}
     }
@@ -438,6 +711,11 @@ private extension ViewController3 {
 private extension ViewController3 {
     func setupLayout() {
         view.addSubview(secondView)
+        view.addSubview(subview1)
+        view.addSubview(subview2)
+        view.addSubview(subview3)
+        view.addSubview(subview4)
+        view.addSubview(subview5)
         
         secondView.snp.makeConstraints{
             $0.top.equalTo(view.snp.topMargin).offset(300)
@@ -457,7 +735,101 @@ private extension ViewController3 {
             $0.top.equalTo(secondView.snp.topMargin).offset(30)
             $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
         }
+        
+        propertyButton.snp.makeConstraints{
+            $0.top.equalTo(secondView.snp.topMargin).offset(25)
+            $0.leading.equalTo(header.snp.trailingMargin).offset(200)
+            $0.height.equalTo(50)
+            $0.width.equalTo(50)
+        }
+        
+        mainInfoScroll.snp.makeConstraints{
+            $0.top.equalTo(header.snp.bottomMargin).offset(30)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalTo(secondView.snp.bottomMargin).inset(10)
+        }
+        
+        secondInfoScroll.snp.makeConstraints{
+            $0.top.equalTo(mainInfoScroll.snp.topMargin).offset(0)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.height.equalTo(120)
+        }
+        
+        subview1.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(secondInfoScroll.snp.leadingMargin).offset(25)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
+        }
+        
+        subview2.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(subview1.snp.trailingMargin).offset(35)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
+        }
+        
+        subview3.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(subview2.snp.trailingMargin).offset(35)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
+        }
+        
+        subview4.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(subview3.snp.trailingMargin).offset(35)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
+        }
+        
+        subview5.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(subview4.snp.trailingMargin).offset(35)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
+        }
+        
+        firstlaunch.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.bottomMargin).offset(50)
+            $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
+        }
+        
+        country.snp.makeConstraints{
+            $0.top.equalTo(firstlaunch.snp.bottomMargin).offset(40)
+            $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
+        }
+        
+        moneyLaunch.snp.makeConstraints{
+            $0.top.equalTo(country.snp.bottomMargin).offset(40)
+            $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
+        }
+        
+        firstStage.snp.makeConstraints{
+            $0.top.equalTo(moneyLaunch.snp.bottomMargin).offset(55)
+            $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
+        }
+        
         secondView.addSubview(header)
+        secondView.addSubview(propertyButton)
+        secondView.addSubview(mainInfoScroll)
+        secondView.addSubview(secondInfoScroll)
+        secondView.addSubview(subview1)
+        secondView.addSubview(subview2)
+        secondView.addSubview(subview3)
+        secondView.addSubview(subview4)
+        secondView.addSubview(subview5)
+        secondView.addSubview(firstlaunch)
+        secondView.addSubview(country)
+        secondView.addSubview(firstStage)
+        secondView.addSubview(engineCount)
+        secondView.addSubview(fuelamount)
+        secondView.addSubview(moneyLaunch)
+        secondView.addSubview(countryData)
+        secondView.addSubview(moneyLaunchData)
+        secondView.addSubview(firstLaunchData)
     }
 }
 
@@ -471,14 +843,50 @@ private extension ViewController3 {
         
         
         header.textColor = .white
-        header.font = UIFont(name: "SFProRounded-Semibold", size: 36)
+        header.font = UIFont(name: "SFProRounded-Medium", size: 32)
+        
+        mainInfoScroll.backgroundColor = .black
+        
+        secondInfoScroll.backgroundColor = .black
+        
+        subview1.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview1.layer.cornerRadius = 20
+        subview2.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview2.layer.cornerRadius = 20
+        subview3.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview3.layer.cornerRadius = 20
+        subview4.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview4.layer.cornerRadius = 20
+        subview5.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview5.layer.cornerRadius = 20
+        
+        firstlaunch.textColor = .white
+        firstlaunch.font = UIFont(name: "SFProRounded-Light", size: 18)
+
+        country.textColor = .white
+        country.font = UIFont(name: "SFProRounded-Light", size: 18)
+
+        moneyLaunch.textColor = .white
+        moneyLaunch.font = UIFont(name: "SFProRounded-Light", size: 18)
+        
+        firstStage.textColor = .white
+        firstStage.font = UIFont(name: "SFProRounded-Bold", size: 22)
     }
 }
 
 private extension ViewController3 {
     func setupData() {
         image1.image = UIImage(named: "starship")
+        
         header.text = "Starship"
+        
+        propertyButton.setImage(UIImage(named: "setting-1"), for: .normal)
+        
+        firstlaunch.text = "Первый запуск"
+        country.text = "Страна"
+        moneyLaunch.text = "Стоимость запуска"
+        
+        firstStage.text = "Первая ступень"
     }
 }
 
@@ -489,4 +897,263 @@ private extension ViewController3 {
 }
 
 
+final class ViewController4: UIViewController {
+    
+    private let image1 = UIImageView()
+    
+    private let secondView = UIView()
+    
+    private let header = UILabel()
+    private let propertyButton = UIButton()
+    
+    private let mainInfoScroll = UIScrollView()
 
+    private let secondInfoScroll = UIScrollView()
+
+    
+    private let subview1 = UIView()
+    private let subview2 = UIView()
+    private let subview3 = UIView()
+    private let subview4 = UIView()
+    private let subview5 = UIView()
+    
+    private let firstlaunch = UILabel()
+    private let firstLaunchData = UILabel()
+    
+    private let country = UILabel()
+    private let countryData = UILabel()
+    
+    private let moneyLaunch = UILabel()
+    private let moneyLaunchData = UILabel()
+    
+    private let firstStage = UILabel()
+    
+    private let engineCount = UILabel()
+    private let fuelamount = UILabel()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        embedViews()
+        setupLayout()
+        setupAppearance()
+        setupData()
+        setupBehavior()
+    }
+}
+
+private extension ViewController4 {
+    func embedViews() {
+        [
+            image1,
+            secondView,
+            header,
+            propertyButton,
+            mainInfoScroll,
+            secondInfoScroll,
+            subview1,
+            subview2,
+            subview3,
+            subview4,
+            subview5,
+            firstlaunch,
+            country,
+            firstStage,
+            engineCount,
+            fuelamount,
+            moneyLaunch,
+            countryData,
+            moneyLaunchData,
+            firstLaunchData
+            
+        
+        ].forEach{view.addSubview($0)}
+    }
+}
+
+private extension ViewController4 {
+    func setupLayout() {
+        view.addSubview(secondView)
+        view.addSubview(subview1)
+        view.addSubview(subview2)
+        view.addSubview(subview3)
+        view.addSubview(subview4)
+        view.addSubview(subview5)
+        
+        secondView.snp.makeConstraints{
+            $0.top.equalTo(view.snp.topMargin).offset(300)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview()
+        }
+        
+        image1.snp.makeConstraints{
+            $0.top.equalToSuperview()
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalTo(secondView.snp.topMargin).offset(60)
+        }
+        
+        header.snp.makeConstraints{
+            $0.top.equalTo(secondView.snp.topMargin).offset(30)
+            $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
+        }
+        
+        propertyButton.snp.makeConstraints{
+            $0.top.equalTo(secondView.snp.topMargin).offset(25)
+            $0.leading.equalTo(header.snp.trailingMargin).offset(200)
+            $0.height.equalTo(50)
+            $0.width.equalTo(50)
+        }
+        
+        mainInfoScroll.snp.makeConstraints{
+            $0.top.equalTo(header.snp.bottomMargin).offset(30)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.bottom.equalTo(secondView.snp.bottomMargin).inset(10)
+        }
+        
+        secondInfoScroll.snp.makeConstraints{
+            $0.top.equalTo(mainInfoScroll.snp.topMargin).offset(0)
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
+            $0.height.equalTo(120)
+        }
+        
+        subview1.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(secondInfoScroll.snp.leadingMargin).offset(25)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
+        }
+        
+        subview2.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(subview1.snp.trailingMargin).offset(35)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
+        }
+        
+        subview3.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(subview2.snp.trailingMargin).offset(35)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
+        }
+        
+        subview4.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(subview3.snp.trailingMargin).offset(35)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
+        }
+        
+        subview5.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.topMargin).offset(2)
+            $0.leading.equalTo(subview4.snp.trailingMargin).offset(35)
+            $0.height.equalTo(100)
+            $0.width.equalTo(100)
+        }
+        
+        firstlaunch.snp.makeConstraints{
+            $0.top.equalTo(secondInfoScroll.snp.bottomMargin).offset(50)
+            $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
+        }
+        
+        country.snp.makeConstraints{
+            $0.top.equalTo(firstlaunch.snp.bottomMargin).offset(40)
+            $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
+        }
+        
+        moneyLaunch.snp.makeConstraints{
+            $0.top.equalTo(country.snp.bottomMargin).offset(40)
+            $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
+        }
+        
+        firstStage.snp.makeConstraints{
+            $0.top.equalTo(moneyLaunch.snp.bottomMargin).offset(55)
+            $0.leading.equalTo(secondView.snp.leadingMargin).offset(30)
+        }
+        
+        secondView.addSubview(header)
+        secondView.addSubview(propertyButton)
+        secondView.addSubview(mainInfoScroll)
+        secondView.addSubview(secondInfoScroll)
+        secondView.addSubview(subview1)
+        secondView.addSubview(subview2)
+        secondView.addSubview(subview3)
+        secondView.addSubview(subview4)
+        secondView.addSubview(subview5)
+        secondView.addSubview(firstlaunch)
+        secondView.addSubview(country)
+        secondView.addSubview(firstStage)
+        secondView.addSubview(engineCount)
+        secondView.addSubview(fuelamount)
+        secondView.addSubview(moneyLaunch)
+        secondView.addSubview(countryData)
+        secondView.addSubview(moneyLaunchData)
+        secondView.addSubview(firstLaunchData)
+    }
+}
+
+private extension ViewController4 {
+    func setupAppearance() {
+        
+        secondView.backgroundColor = .black
+        secondView.clipsToBounds = true
+        secondView.layer.cornerRadius = 40
+        secondView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        
+        
+        header.textColor = .white
+        header.font = UIFont(name: "SFProRounded-Medium", size: 32)
+        
+        mainInfoScroll.backgroundColor = .black
+        
+        secondInfoScroll.backgroundColor = .black
+        
+        subview1.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview1.layer.cornerRadius = 20
+        subview2.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview2.layer.cornerRadius = 20
+        subview3.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview3.layer.cornerRadius = 20
+        subview4.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview4.layer.cornerRadius = 20
+        subview5.backgroundColor = UIColor(red: 0.11, green: 0.11, blue: 0.11, alpha: 1.00)
+        subview5.layer.cornerRadius = 20
+        
+        firstlaunch.textColor = .white
+        firstlaunch.font = UIFont(name: "SFProRounded-Light", size: 18)
+
+        country.textColor = .white
+        country.font = UIFont(name: "SFProRounded-Light", size: 18)
+
+        moneyLaunch.textColor = .white
+        moneyLaunch.font = UIFont(name: "SFProRounded-Light", size: 18)
+        
+        firstStage.textColor = .white
+        firstStage.font = UIFont(name: "SFProRounded-Bold", size: 22)
+    }
+}
+
+private extension ViewController4 {
+    func setupData() {
+        image1.image = UIImage(named: "starship")
+        
+        header.text = "Starship"
+        
+        propertyButton.setImage(UIImage(named: "setting-1"), for: .normal)
+        
+        firstlaunch.text = "Первый запуск"
+        country.text = "Страна"
+        moneyLaunch.text = "Стоимость запуска"
+        
+        firstStage.text = "Первая ступень"
+    }
+}
+
+private extension ViewController4 {
+    func setupBehavior() {
+
+    }
+}

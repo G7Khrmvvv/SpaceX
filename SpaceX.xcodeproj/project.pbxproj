@@ -25,6 +25,7 @@
 		886C0C7A2BA584FD000EDAC1 /* SF-Pro-Rounded-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 886C0C712BA584FD000EDAC1 /* SF-Pro-Rounded-Medium.otf */; };
 		886DD2232BAF1FFE0026C5B0 /* RocketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886DD2222BAF1FFE0026C5B0 /* RocketViewController.swift */; };
 		88AC1FF22BA58A5E0071235F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 88AC1FF12BA58A5E0071235F /* Alamofire */; };
+		88C8549B2BB2C55800944AE9 /* ApiConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C8549A2BB2C55800944AE9 /* ApiConnect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		886C0C702BA584FD000EDAC1 /* SF-Pro-Rounded-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Ultralight.otf"; sourceTree = "<group>"; };
 		886C0C712BA584FD000EDAC1 /* SF-Pro-Rounded-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Medium.otf"; sourceTree = "<group>"; };
 		886DD2222BAF1FFE0026C5B0 /* RocketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketViewController.swift; sourceTree = "<group>"; };
+		88C8549A2BB2C55800944AE9 /* ApiConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConnect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				8830441D2BAEE79700713594 /* PropertyViewController.swift */,
 				8830441F2BAEE91600713594 /* LaunchViewController.swift */,
 				886DD2222BAF1FFE0026C5B0 /* RocketViewController.swift */,
+				88C8549A2BB2C55800944AE9 /* ApiConnect.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				883044202BAEE91600713594 /* LaunchViewController.swift in Sources */,
 				886DD2232BAF1FFE0026C5B0 /* RocketViewController.swift in Sources */,
 				8830441E2BAEE79700713594 /* PropertyViewController.swift in Sources */,
+				88C8549B2BB2C55800944AE9 /* ApiConnect.swift in Sources */,
 				886C0C4F2BA572F0000EDAC1 /* AppDelegate.swift in Sources */,
 				886C0C512BA572F0000EDAC1 /* SceneDelegate.swift in Sources */,
 			);
